@@ -1,4 +1,5 @@
 import express from "express";
+import path from "path";
 import filePath from "./filePath";
 
 const app = express();
@@ -6,7 +7,7 @@ const app = express();
 app.get("/", (req, res) => {
   const pathToFile = filePath("/pages/index.html");
   res.sendFile(pathToFile);
-})
+});
 
 app.get("/africa", (req, res) => {
   const pathToFile = filePath("/pages/africa.html");
@@ -19,15 +20,29 @@ app.get("/asia", (req, res) => {
 });
 
 app.get("/oceania", (req, res) => {
-  const pathToFile = filePath("/pages/south-america.html");
+  const pathToFile = filePath("/pages/oceania.html");
   res.sendFile(pathToFile);
 });
 
 app.get("/south-america", (req, res) => {
-  const pathToFile = filePath("/pages/index.html");
+  const pathToFile = filePath("/pages/south-america.html");
   res.sendFile(pathToFile);
 });
 
+app.get("/antarctica", (req, res) => {
+  const pathToFile = filePath("/pages/antarctica.html");
+  res.sendFile(pathToFile);
+});
+
+app.get("/north-america", (req, res) => {
+  const pathToFile = filePath("/pages/north-america.html");
+  res.sendFile(pathToFile);
+});
+
+app.get("/europe", (req, res) => {
+  const pathToFile = filePath("/pages/europe.html");
+  res.sendFile(pathToFile);
+});
 // using 4000 by convention, but could be changed
 const PORT_NUMBER = 4000;
 
